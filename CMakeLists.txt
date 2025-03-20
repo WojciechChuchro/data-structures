@@ -3,4 +3,10 @@ project(data_structures C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(data_structures main.c)
+include_directories(include)
+
+add_executable(
+        data_structures main.c
+        includes/SingleLinkedList.h
+        src/singleLinkedList.c
+)
