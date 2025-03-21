@@ -5,7 +5,7 @@
 int main(void) {
     SingleLinkedList* head = createSingleLinkedList(10);
 
-    printf("%d\n%p", head->val, head);
+    printFromHead(&head);
     free(head);
     return 0;
 }
