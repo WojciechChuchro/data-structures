@@ -7,6 +7,8 @@ include_directories(include)
 
 add_executable(
         data_structures main.c
-        includes/singleLinkedList.h
-        src/singleLinkedList.c
+        includes/Node.h
+        includes/LinkedList.h
+        src/Node.c
+        src/LinkedList.c
 )

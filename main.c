@@ -1,43 +1,59 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include "includes/SingleLinkedList.h"
+#include <stdio.h>
+#include "includes/LinkedList.h"
+#include "includes/Node.h"
 
-void test(SingleLinkedList* head) {
-    SingleLinkedList* h = createSingleLinkedList(10);
+LinkedList* init() {
 
-    head->val = 15;
-    head->next = h;
+    Node* head = createNode(10);
+    Node* tail = createNode(10);
 
-    printf("test: %d", head->val);
-}
-SingleLinkedList* init() {
-    SingleLinkedList* head = createSingleLinkedList(10);
 
-    addFromHead(&head, 15);
-    addFromHead(&head, 1);
-    addFromHead(&head, 2);
-    addFromHead(&head, 3);
+    LinkedList* ll = createLinkedList(head, tail);
 
-    printf("Init list\n");
-    printFromHead(&head);
+    addFromHead(&ll, 15);
+    // addFromHead(&head, 1);
+    // addFromHead(&head, 2);
+    // addFromHead(&head, 3);
+    //
+    // printf("Init list\n");
+    printFromHead(ll);
 
-    return head;
+    return ll;
 }
 
 int main(void) {
-    SingleLinkedList* head = init();
-    SingleLinkedList* lastNode = NULL;
+    LinkedList* ll = init();
+
+    LinkedList* ell = createEmptyLinkedList();
+
+    printf("empty list\n");
+    addLast(&ell, 2);
+    printFromHead(ell);
+    addLast(&ell, 32);
+    printFromHead(ell);
+    addLast(&ell, 92);
+    printFromHead(ell);
+    // addFromHead(&ell, 22);
+    // printFromHead(ell);
+    // addFromHead(&ell, 9);
+    //
+    // printFromHead(ell);
+
+    free(ell);
 
     // addFirst(&head, 69);
     // getFirst(head);
 
     // removeFirst(&head);
     // lastNode = getLastFromHead(&head);
-    removeLastFromHead(&head);
-    printFromHead(&head);
+    // removeLastFromHead(&head);
+    // printFromHead(&head);
     // const int s = size(head);
     // printf("size %d", s);
 
-    free(head);
+    free(ll->head);
+    free(ll->tail);
+    free(ll);
     return 0;
 }
