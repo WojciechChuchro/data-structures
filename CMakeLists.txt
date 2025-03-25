@@ -11,4 +11,6 @@ add_executable(
         includes/LinkedList.h
         src/Node.c
         src/LinkedList.c
+        src/BST.c
+        includes/BST.h
 )
