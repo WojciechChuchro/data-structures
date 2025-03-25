@@ -81,20 +81,21 @@ void printFromHead(const LinkedList* ll) {
         free(traverse);
     }
 }
-//bool addFirst(Node** head, const int val) {
-//    Node* newHead = createNode(val);
-//
-//    if (newHead == NULL) {
-//        printf("Failed creating new head!");
-//        return false;
-//    }
-//
-//    newHead->next = *head;
-//    *head = newHead;
-//
-//    return true;
-//}
-//
+
+bool addFirst(LinkedList** ll, const int val) {
+    Node* newHead = createNode(val);
+
+    if (newHead == NULL) {
+        printf("Failed creating new head!");
+        return false;
+    }
+
+    (*ll)->head->next = (*ll)->head;
+    (*ll)->head = newHead;
+
+    return true;
+}
+
 bool addLast(LinkedList** ll, int val) {
     Node* newNode = createNode(val);
 
@@ -114,10 +115,8 @@ bool addLast(LinkedList** ll, int val) {
         curr = curr->next;
     }
 
-
     curr->next = newNode;
     (*ll)->tail = newNode;
-
 
     return true;
 }

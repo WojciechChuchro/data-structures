@@ -10,6 +10,7 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+
 Node* createEmptyNode();
 Node* createNode(int val);
 

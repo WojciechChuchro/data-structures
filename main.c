@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "includes/LinkedList.h"
 #include "includes/Node.h"
+#include "includes/BST.h"
 
 LinkedList* init() {
 
@@ -22,7 +23,7 @@ LinkedList* init() {
     return ll;
 }
 
-int main(void) {
+void linkedList() {
     LinkedList* ll = init();
 
     LinkedList* ell = createEmptyLinkedList();
@@ -30,6 +31,7 @@ int main(void) {
     printf("empty list\n");
     addLast(&ell, 2);
     printFromHead(ell);
+    addLast(&ell, 69);
     addLast(&ell, 32);
     printFromHead(ell);
     addLast(&ell, 92);
@@ -55,5 +57,16 @@ int main(void) {
     free(ll->head);
     free(ll->tail);
     free(ll);
+}
+
+void bst() {
+    BST* bst = createEmptyBST();
+
+    free(bst);
+}
+
+int main(void) {
+    // linkedList();
+    bst();
     return 0;
 }
